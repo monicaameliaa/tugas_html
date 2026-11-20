@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Anggota Baru</title>
+    <!-- Menghubungkan Font Awesome untuk ikon di dalam input -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border: 1px solid #b0c4de;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 500px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group label {
+            width: 140px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .input-container {
+            position: relative;
+            flex: 1;
+        }
+
+        .input-container i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .input-container input, .input-container select {
+            width: 100%;
+            padding: 8px 10px 8px 35px;
+            border: 1px solid #3b82f6;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-container input:focus, .input-container select:focus {
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Styling untuk Radio dan Checkbox */
+        .selection-group {
+            margin-bottom: 15px;
+        }
+
+        .selection-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .grid-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            padding-left: 5px;
+        }
+
+        .grid-options label {
+            font-size: 14px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .grid-options input {
+            margin-right: 8px;
+        }
+
+        /* Tombol Daftar */
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #2b93b7;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #20728f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Formulir Pendaftaran Anggota Baru</h2>
+    
+    <form>
+        <!-- Nama Lengkap -->
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <div class="input-container">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="nama" placeholder="isi nama Anda" required>
+            </div>
+        </div>
+
+        <!-- Alamat Email -->
+        <div class="form-group">
+            <label for="email">Alamat Email:</label>
+            <div class="input-container">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" placeholder="nama@email.com" required>
+            </div>
+        </div>
+
+        <!-- Kata Sandi -->
+        <div class="form-group">
+            <label for="password">Kata Sandi:</label>
+            <div class="input-container">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" placeholder="••••••••••••" required>
+            </div>
+        </div>
+
+        <!-- Pilihan Minat Utama -->
+        <div class="selection-group">
+            <div class="selection-title">Pilih Minat Utama (Satu):</div>
+            <div class="grid-options">
+                <label><input type="radio" name="minat" value="web" checked> Pengembangan Web</label>
+                <label><input type="radio" name="minat" value="desain"> Desain Grafis</label>
+                <label><input type="radio" name="minat" value="kripto"> Kriptografi</label>
+                <label><input type="radio" name="minat" value="data"> Analis Data</label>
+            </div>
+        </div>
+
+        <!-- Area Keahlian -->
+        <div class="selection-group">
+            <div class="selection-title">Area Keahlian (Pilih semua yang sesuai):</div>
+            <div class="grid-options">
+                <label><input type="checkbox" name="keahlian" value="html-css"> HTML/CSS</label>
+                <label><input type="checkbox" name="keahlian" value="js" checked> JavaScript/Node.js</label>
+                <label><input type="checkbox" name="keahlian" value="ui-ux"> Desain UI/UX</label>
+                <label><input type="checkbox" name="keahlian" value="python" checked> Python</label>
+                <label><input type="checkbox" name="keahlian" value="marketing"> Pemasaran Digital</label>
+            </div>
+        </div>
+
+        <!-- Negara Asal -->
+        <div class="form-group">
+            <label for="negara">Negara Asal:</label>
+            <div class="input-container" style="padding-left: 0;">
+                <!-- Menggunakan select bawaan HTML -->
+                <select id="negara" required style="padding-left: 10px;">
+                    <option value="" disabled selected>Pilih Negara</option>
+                    <option value="indonesia">Indonesia</option>
+                    <option value="malaysia">Malaysia</option>
+                    <option value="singapura">Singapura</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tombol Submit -->
+        <div class="btn-container">
+            <button type="submit" class="btn-submit">[Daftar Sekarang]</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
